@@ -1,0 +1,52 @@
+{
+	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+	"name": "TPTP",
+	"patterns": [
+		{ "include": "#formula" },
+		{ "include": "#comment_line" },
+		{ "include": "#comment_block" }
+	],
+	"repository": {
+		"formula": {
+      "begin": "(thf|tff)(\\()([^,]*),([^,]*),",
+      "end": "\\)\\.",
+      "beginCaptures": {
+        "1": { "name": "keyword.formula.type" },
+        "2": { "name": "keyword.formula.open" },
+        "3": { "name": "entity.name.function" },
+        "4": { "name": "storage.type" }
+      },
+      "endCaptures": {
+        "0": { "name": "keyword.formula.close" }
+      },
+      "name": "formula.group",
+      "patterns": [
+				{ "include": "#variable" }, 
+				{ "include": "#constant" },
+				{ "include": "#comment_line" },
+				{ "include": "#comment_block" }]
+    },
+		"variable": {
+			"match": "[A-Z][a-zA-Z]*",
+      "name": "constant.numeric"
+		},
+		"constant": {
+			"match": "[a-z][a-zA-Z]*",
+      "name": "variable.parameter"
+		},
+		"formula_type": {
+			"match": "tpi|thf|tff|tcf|fof|cnf",
+      "name": "keyword.formula_type"
+		},
+		"comment_line": {
+			"match": "#.*$",
+      "name": "comment.line"
+		},
+		"comment_block": {
+			"begin": "\\/\\*",
+			"end": "\\*\\/",
+      "name": "comment.block"
+		}
+	},
+	"scopeName": "source.tptp"
+}

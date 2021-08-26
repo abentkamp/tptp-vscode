@@ -1,0 +1,35 @@
+{
+    "name": "tptp",
+    "displayName": "TPTP",
+    "description": "Syntax highlighting for TPTP problems",
+    "version": "0.0.1",
+    "engines": {
+        "vscode": "^1.59.0"
+    },
+    "categories": [
+        "Programming Languages"
+    ],
+    "contributes": {
+        "languages": [
+            {
+                "id": "tptp",
+                "aliases": [
+                    "TPTP",
+                    "tptp"
+                ],
+                "extensions": [
+                    ".p"
+                ],
+                "configuration": "./language-configuration.json"
+            }
+        ],
+        "grammars": [
+            {
+                "language": "tptp",
+                "scopeName": "source.tptp",
+                "path": "./syntaxes/tptp.tmLanguage.json"
+            }
+        ]
+    },
+    "dependencies": {}
+}
