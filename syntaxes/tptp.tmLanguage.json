@@ -11,13 +11,13 @@
       "begin": "(thf|tff)(\\()([^,]*),([^,]*),",
       "end": "\\)\\.",
       "beginCaptures": {
-        "1": { "name": "keyword.formula.type" },
-        "2": { "name": "keyword.formula.open" },
+        "1": { "name": "keyword.control.formula.type" },
+        "2": { "name": "keyword.control.formula.open" },
         "3": { "name": "entity.name.function" },
         "4": { "name": "storage.type" }
       },
       "endCaptures": {
-        "0": { "name": "keyword.formula.close" }
+        "0": { "name": "keyword.control.formula.close" }
       },
       "name": "formula.group",
       "patterns": [
